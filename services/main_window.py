@@ -13,7 +13,7 @@ project_root = current_file_path.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Теперь импорт должен работать, так как Python "увидит" папку my_project/userforms
-from userforms.main_single_window_test import Ui_main_single_window
+from userforms.main_single_window_userform import Ui_main_single_window
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 class Main_single_window (QMainWindow, Ui_main_single_window,): 

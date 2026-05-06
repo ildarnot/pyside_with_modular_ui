@@ -13,7 +13,7 @@ project_root = current_file_path.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Теперь импорт должен работать, так как Python "увидит" папку my_project/userforms
-from userforms.selection_window import Ui_selection_window
+from userforms.selection_window_userform import Ui_selection_window
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 class Selection_window (QMainWindow, Ui_selection_window,): 
