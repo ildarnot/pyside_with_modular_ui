@@ -1,7 +1,22 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QDoubleSpinBox, QSpinBox, QFormLayout, QGridLayout
-from my_ui2 import Ui_MainWindow
+import os
+import sys
+from pathlib import Path
 
-class MainWindow1 (QMainWindow, Ui_MainWindow,): 
+
+# Получаем абсолютный путь к текущему файлу (main_window.py)
+current_file_path = Path(__file__).resolve()
+
+# Поднимаемся на два уровня вверх, чтобы оказаться в корне проекта (my_project)
+project_root = current_file_path.parent.parent
+
+# Добавляем корень проекта в начало списка путей поиска
+sys.path.insert(0, str(project_root))
+
+# Теперь импорт должен работать, так как Python "увидит" папку my_project/userforms
+from userforms.main_single_window_test import Ui_main_single_window
+from PySide6.QtWidgets import QApplication, QMainWindow
+
+class Main_single_window (QMainWindow, Ui_main_single_window,): 
     #         super(MyWindow, self).__init__()
 #         self.ui = Ui_MainWindow()
 #         self.ui.setupUi(self)
@@ -11,17 +26,11 @@ class MainWindow1 (QMainWindow, Ui_MainWindow,):
         """
         QMainWindow.__init__(self)
         self.setupUi(self)
-        self.doubleSpinBox.valueChanged.connect(self.ChangeStyleSpinbox)
-
-    def ChangeStyleSpinbox(self):
-        self.doubleSpinBox.setDecimals(10)
-        if 10==self.doubleSpinBox.value:
-            self.doubleSpinBox.setStyleSheet(u"background-color: rgb(1, 1, 1);")
-            
+           
 
 
 if __name__ == "__main__":
     app = QApplication([])
-    window = MainWindow1()
+    window = Main_single_window()
     window.show()
     app.exec()
