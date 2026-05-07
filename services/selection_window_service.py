@@ -17,9 +17,6 @@ from userforms.selection_window_userform import Ui_selection_window
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 class Selection_window (QMainWindow, Ui_selection_window,): 
-    #         super(MyWindow, self).__init__()
-#         self.ui = Ui_MainWindow()
-#         self.ui.setupUi(self)
     def __init__(self) -> None:
         """
         Конструктор класса MainWindow, в нем содержатся все поля и методы, которые нужны для работы окна при запуске приложения.
@@ -43,3 +40,4 @@ if __name__ == "__main__":
     window = Selection_window()
     window.show()
     app.exec()
+
