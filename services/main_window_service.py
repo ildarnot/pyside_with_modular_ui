@@ -17,6 +17,7 @@ from userforms.main_single_window_userform import Ui_main_single_window
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 # Импортируем преобразованный виджет
+from services.selection_window_service import Selection_window
 from userforms.selection_window_userform import Ui_selection_window
 
 class Main_single_window (QMainWindow, Ui_main_single_window,): 
@@ -53,16 +54,14 @@ class Main_single_window (QMainWindow, Ui_main_single_window,):
             lambda: self.stackedWidget_2.setCurrentIndex(3)
         )
 
-        # # Создаём экземпляр SelectionWidget
-        # Создаём виджет для окна выбора зацепления
-        self.selection_main_window = QMainWindow(self)  # Главное окно для селектора
-        self.ui_selection = Ui_selection_window()
-        self.ui_selection.setupUi(self.selection_main_window)
-
-
-        central_widget = self.selection_main_window.centralWidget()  # Берём центральный виджет
-        self.stackedWidget_2.insertWidget(1, central_widget)  # Добавляем на страницу с индексом 1
-
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Настройка импорта ui с другого самостоятельного окна ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓      
+        # Создаём экземпляр Selection_window (с UI и логикой)
+        self.selection_widget = Selection_window()
+        # Берём его центральный виджет для встраивания в stackedWidget
+        selection_central_widget = self.selection_widget.centralWidget()
+        # Добавляем в stackedWidget на страницу с индексом 1
+        self.stackedWidget_2.insertWidget(1, selection_central_widget)
+# ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Настройка импорта ui с другого самостоятельного окна ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 
 if __name__ == "__main__":
