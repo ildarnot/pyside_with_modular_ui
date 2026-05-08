@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'selection_window_service.ui'
+## Form generated from reading UI file 'selection_window_userform.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##

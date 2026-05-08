@@ -25,3 +25,14 @@ sed -i '/^    QToolButton, QVBoxLayout, QWidget)/a \
 \n\
 class CustomDoubleSpinbox(QDoubleSpinBox):\n\    def validate(self, text: str, pos: int) -> tuple[int, str, int]:\n\        text = text.replace(".", ",")\n\        return super().validate(text, pos)\n\    def valueFromText(self, text: str) -> float:\n\        text = text.replace(",", ".")\n\        return float(text)\n\    \n\QDoubleSpinBox=CustomDoubleSpinbox # Ваш дополнительный код здесь!' "$PY_FILE1"
 echo "2. Преобразование |Подбор| selection_window_userform.ui успешно выполнено!"
+
+# Путь к исходному ui-файлу и выходному py-файлу calculation_window_userform
+UI_FILE2="calculation_window_userform.ui"
+PY_FILE2="calculation_window_userform.py"
+# Генерация py-кода из ui-файла
+pyside6-uic "$UI_FILE2" -o "$PY_FILE2"
+# Добавляем строку после всех строк import
+sed -i '/^    QToolButton, QVBoxLayout, QWidget)/a \
+\n\
+class CustomDoubleSpinbox(QDoubleSpinBox):\n\    def validate(self, text: str, pos: int) -> tuple[int, str, int]:\n\        text = text.replace(".", ",")\n\        return super().validate(text, pos)\n\    def valueFromText(self, text: str) -> float:\n\        text = text.replace(",", ".")\n\        return float(text)\n\    \n\QDoubleSpinBox=CustomDoubleSpinbox # Ваш дополнительный код здесь!' "$PY_FILE2"
+echo "3. Преобразование |Расчёт| calculation_window_userform.ui успешно выполнено!"
