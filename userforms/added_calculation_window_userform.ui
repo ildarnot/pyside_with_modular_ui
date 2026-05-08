@@ -1,73 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Calculation_window</class>
- <widget class="QMainWindow" name="Calculation_window">
+ <class>Added_window</class>
+ <widget class="QMainWindow" name="Added_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>318</width>
-    <height>182</height>
+    <width>383</width>
+    <height>172</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Расчёт</string>
+   <string>Дополнительный расчёт</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QDoubleSpinBox" name="first_spinbox">
-          <property name="decimals">
-           <number>3</number>
-          </property>
-          <property name="minimum">
-           <double>-9999999999999.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>9999999999999.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QToolButton" name="multi_button">
+           <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>x</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
+             <string>Степень</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="divide_button">
-            <property name="text">
-             <string>/</string>
+           <widget class="QDoubleSpinBox" name="degree_spinbox">
+            <property name="decimals">
+             <number>3</number>
             </property>
-            <property name="checkable">
-             <bool>true</bool>
+            <property name="minimum">
+             <double>-9999999999999.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999999999999.000000000000000</double>
             </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="second_spinbox">
-          <property name="decimals">
-           <number>3</number>
-          </property>
-          <property name="minimum">
-           <double>-9999999999999.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>9999999999999.000000000000000</double>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Основание</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="main_number_spinbox">
+            <property name="decimals">
+             <number>3</number>
+            </property>
+            <property name="minimum">
+             <double>-9999999999999.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999999999999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -79,7 +77,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QDoubleSpinBox" name="multiplication_spinbox">
+       <widget class="QDoubleSpinBox" name="result_spinbox">
         <property name="decimals">
          <number>3</number>
         </property>
@@ -107,7 +105,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QToolButton" name="gearing_calculation_btn">
+     <widget class="QToolButton" name="gear_calculation_btn">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -139,21 +137,21 @@ QToolButton:pressed {
 QToolButton:checked {
     background-color: transparent;
     color: black;
-    border: 2px solid rgba(243, 93, 93, 0.5); /* Более насыщенный голубой */
+    border: 2px solid rgba(0, 188, 188, 0.5); /* Более насыщенный голубой */
 }
 
 QToolButton:checked:hover {
-    background-color: rgba(243, 93, 93, 0.05);
+    background-color: rgba(0, 188, 188, 0.05);
+/*    border: 2px solid rgba(0, 150, 150, 0.9); /* Темнее при наведении */
 }
 
 QToolButton:checked:pressed {
-    background-color: rgba(243, 93, 93, 0.1);
+    background-color: rgba(0, 188, 188, 0.1);
 }
-
 </string>
       </property>
       <property name="text">
-       <string>Расчёт</string>
+       <string>Дополнительный расчёт</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -170,7 +168,7 @@ QToolButton:checked:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>318</width>
+     <width>383</width>
      <height>22</height>
     </rect>
    </property>

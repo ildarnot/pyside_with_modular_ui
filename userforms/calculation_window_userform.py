@@ -23,7 +23,7 @@ class Ui_Calculation_window(object):
     def setupUi(self, Calculation_window):
         if not Calculation_window.objectName():
             Calculation_window.setObjectName(u"Calculation_window")
-        Calculation_window.resize(323, 200)
+        Calculation_window.resize(318, 182)
         self.centralwidget = QWidget(Calculation_window)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -141,7 +141,7 @@ class Ui_Calculation_window(object):
         Calculation_window.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(Calculation_window)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 323, 22))
+        self.menubar.setGeometry(QRect(0, 0, 318, 22))
         Calculation_window.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(Calculation_window)
         self.statusbar.setObjectName(u"statusbar")

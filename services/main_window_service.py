@@ -18,8 +18,8 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 
 # Импортируем преобразованный виджет
 from services.selection_window_service import Selection_window
-from userforms.selection_window_userform import Ui_selection_window
 from services.calculation_window_service import Calculation_window
+from services.added_calculation_window_service import Added_calculation_window
 
 class Main_single_window (QMainWindow, Ui_main_single_window,): 
     #         super(MyWindow, self).__init__()
@@ -72,6 +72,15 @@ class Main_single_window (QMainWindow, Ui_main_single_window,):
         calculation_central_widget = self.calculation_widget.centralWidget()
         # Добавляем в stackedWidget на страницу с индексом 1
         self.stackedWidget_2.insertWidget(2, calculation_central_widget)
+# ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Настройка импорта ui с другого самостоятельного окна calculation_window ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Настройка импорта ui с другого самостоятельного окна calculation_window ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓      
+        # Создаём экземпляр Selection_window (с UI и логикой)
+        self.added_calculation_widget = Added_calculation_window()
+        # Берём его центральный виджет для встраивания в stackedWidget
+        added_calculation_central_widget = self.added_calculation_widget.centralWidget()
+        # Добавляем в stackedWidget на страницу с индексом 1
+        self.stackedWidget_2.insertWidget(3, added_calculation_central_widget)
 # ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Настройка импорта ui с другого самостоятельного окна calculation_window ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 
