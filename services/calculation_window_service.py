@@ -16,7 +16,7 @@ sys.path.insert(0, str(project_root))
 from userforms.calculation_window_userform import Ui_Calculation_window
 from PySide6.QtWidgets import QApplication, QMainWindow, QButtonGroup
 
-class Selection_window (QMainWindow, Ui_Calculation_window,): 
+class Calculation_window (QMainWindow, Ui_Calculation_window,): 
     def __init__(self) -> None:
         """
         Конструктор класса MainWindow, в нем содержатся все поля и методы, которые нужны для работы окна при запуске приложения.
@@ -48,7 +48,7 @@ class Selection_window (QMainWindow, Ui_Calculation_window,):
 
 if __name__ == "__main__":
     app = QApplication([])
-    window = Selection_window()
+    window = Calculation_window()
     window.show()
     app.exec()
 
